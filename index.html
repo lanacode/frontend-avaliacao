@@ -1,85 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plataforma de Apostas | Eventos</title>
-    <link rel="stylesheet" href="styles/principal.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles/principal.css" />
+  </head>
+  <body>
     <header class="cabecalho-principal">
-        <div class="logo">
-            <h1>BetProject</h1>
-        </div>
-        <nav class="navegacao-principal">
-            <ul>
-                <li><a href="/">Eventos</a></li>
-                <li><a href="/ao-vivo">Ao Vivo</a></li>
-                <li><a href="/promocoes">Promoções</a></li>
-            </ul>
-        </nav>
-        <div class="acoes-usuario">
-            <a href="/login" class="btn-entrar">Login</a>
-            <a href="/cadastro" class="btn-cadastrar">Cadastre-se</a>
-        </div>
+      <div class="logo">
+        <h1>BetProject</h1>
+      </div>
+      <nav class="navegacao-principal">
+        <ul>
+          <li><a href="/">Eventos</a></li>
+          <li><a href="/ao-vivo">Ao Vivo</a></li>
+          <li><a href="/promocoes">Promoções</a></li>
+        </ul>
+      </nav>
+      <div class="acoes-usuario">
+        <a href="/login.html" class="btn-entrar"
+          >Login</a
+        >
+        <a href="/cadastro.html" class="btn-cadastrar"
+          >Cadastre-se</a
+        >
+      </div>
     </header>
 
     <main class="container-principal">
-
-        <section class="area-conteudo">
-
-            <section class="secao-destaques">
-                <h2>Destaques da Semana</h2>
-                <div id="container-carrossel">
-                    </div>
-            </section>
-
-            <section class="area-eventos">
-                <h2>Próximos Eventos</h2>
-                
-                <nav class="filtros-eventos">
-                    <button data-esporte="futebol">Futebol</button>
-                    <button data-esporte="esports">E-sports</button>
-                </nav>
-
-                <div id="lista-eventos" class="grade-cards-eventos">
-                    <p class="aviso-carregamento">Carregando eventos...</p>
-                </div>
-            </section>
-
+      <section class="area-conteudo">
+        <section class="secao-destaques">
+          <h2>Destaques da Semana</h2>
+          <div id="container-carrossel"></div>
         </section>
 
+        <section class="area-eventos">
+          <h2>Próximos Eventos</h2>
 
-        <aside id="sidebar-bilhete" class="sidebar-bilhete">
-            <h3>Seu Bilhete de Aposta</h3>
-            
-            <div id="lista-selecoes">
-                <p class="aviso-vazio">Clique nas Odds para adicionar seleções.</p>
+          <nav class="filtros-eventos">
+            <button data-esporte="futebol">Futebol</button>
+            <button data-esporte="esports">E-sports</button>
+          </nav>
+
+          <div id="lista-eventos" class="grade-cards-eventos">
+            <div class="evento">
+              <h6>E-sport</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
+                hic deleniti, molestiae et beatae alias facere deserunt
+                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
+                sapiente consequatur alias dolorum vero consequuntur nemo?
+              </p>
             </div>
-
-            <div class="area-valor-aposta">
-                <label for="valor-aposta">Valor da Aposta (R$):</label>
-                <input type="number" id="valor-aposta" min="1" value="10">
+            <div class="evento">
+              <h6>Futebol</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
+                hic deleniti, molestiae et beatae alias facere deserunt
+                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
+                sapiente consequatur alias dolorum vero consequuntur nemo?
+              </p>
             </div>
-
-            <div class="area-resumo">
-                <p>Retorno Potencial Bruto: <span id="retorno-bruto">R$ 0.00</span></p>
-                <p class="deducao">Encargo de Serviço (5%): <span id="taxa-deducao">R$ 0.00</span></p>
-                <hr>
-                <p class="total">Retorno Líquido Estimado: <span id="retorno-liquido">R$ 0.00</span></p>
+            <div class="evento">
+              <h6>Basquete</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
+                hic deleniti, molestiae et beatae alias facere deserunt
+                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
+                sapiente consequatur alias dolorum vero consequuntur nemo?
+              </p>
             </div>
+            <div class="evento">
+              <h6>Speedway</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
+                hic deleniti, molestiae et beatae alias facere deserunt
+                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
+                sapiente consequatur alias dolorum vero consequuntur nemo?
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
 
-            <button id="btn-apostar" class="btn-principal" disabled>Fazer Aposta</button>
-        </aside>
+      <aside id="sidebar-bilhete" class="sidebar-bilhete">
+        <h3>Seu Bilhete de Aposta</h3>
 
+        <div id="lista-selecoes">
+          <p class="aviso-vazio">Clique nas Odds para adicionar seleções.</p>
+        </div>
+
+        <div class="area-valor-aposta">
+          <label for="valor-aposta">Valor da Aposta (R$):</label>
+          <input type="number" id="valor-aposta" min="1" value="10" />
+        </div>
+
+        <div class="area-resumo">
+          <p>
+            Retorno Potencial Bruto: <span id="retorno-bruto">R$ 0.00</span>
+          </p>
+          <p class="deducao">
+            Encargo de Serviço (5%): <span id="taxa-deducao">R$ 0.00</span>
+          </p>
+          <hr />
+          <p class="total">
+            Retorno Líquido Estimado: <span id="retorno-liquido">R$ 0.00</span>
+          </p>
+        </div>
+
+        <button id="btn-apostar" class="btn-principal" disabled>
+          Fazer Aposta
+        </button>
+      </aside>
     </main>
 
     <footer class="rodape-principal">
-        <p>&copy; 2025 BetProject. Todos os direitos reservados.</p>
+      <p>&copy; 2025 BetProject. Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/app.js"></script>
-
-</body>
+  </body>
 </html>
