@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetSim | E-Sports - Apostas Esportivas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/esporte.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container-principal">
+
+        <header class="cabecalho-principal">
+            <figure class="logo">
+                <img src="img/logo.png" alt="BetSim Logo">
+                <h1>BetSim</h1>
+            </figure>
+
+            <nav class="navegacao-principal">
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="futebol.html">Futebol</a></li>
+                    <li><a href="basquete.html">Basquete</a></li>
+                    <li><a href="tenis.html">Tênis</a></li>
+                    <li><a href="formula1.html">Fórmula 1</a></li>
+                    <li><a href="esport.html" class="ativo">E-Sports</a></li>
+                </ul>
+            </nav>
+
+            <section class="acoes-usuario">
+                <a href="login.html" class="btn-entrar">Entrar</a>
+            </section>
+        </header>
+
+        <main class="layout-eventos-bilhete">
+
+            <section class="conteudo-eventos-principal">
+
+                <section class="banner small-banner" aria-label="Apostas de E-Sports">
+                    <article class="banner-content">
+                        <h2>E-Sports: O mundo digital das grandes ligas.</h2>
+                        <p>CS:GO, Valorant, League of Legends e mais.</p>
+                    </article>
+                </section>
+
+                <nav class="filtros-esporte" aria-label="Filtro de Esportes">
+                    <ul>
+                        <li><button data-sport="futebol">Futebol</button></li>
+                        <li><button data-sport="basquete">Basquete</button></li>
+                        <li><button data-sport="tenis">Tênis</button></li>
+                        <li><button data-sport="formula1">Fórmula 1</button></li>
+                        <li><button data-sport="esports" class="ativo">E-sports</button></li>
+                    </ul>
+                </nav>
+
+                <section id="lista-eventos" class="listagem-eventos" aria-live="polite">
+                    <h2>E-Sports - Próximos Confrontos</h2>
+
+                    <section class="sport-group" data-sport="esports">
+                        <p class="loading-placeholder">Carregando todos os eventos de E-Sports...</p>
+                    </section>
+                </section>
+
+            </section>
+
+           <aside id="barra-bilhete" class="barra-bilhete" aria-label="Bilhete de Aposta e Simulador de Ganhos">
+                <header>
+                    <h3>Seu Bilhete</h3>
+                </header>
+                <div id="lista-selecoes" class="lista-selecoes">
+                    <p class="empty-message">Clique nas Odds para adicionar seleções.</p>
+                </div>
+
+                <form class="formulario-aposta">
+                    <label for="valor-aposta">Valor da Aposta (R$):</label>
+                    <input type="number" id="valor-aposta" value="10.00" min="1.00" step="0.01" required>
+
+                    <dl class="resumo-calculo">
+                        <dt>Odd Total:</dt>
+                        <dd id="total-cotacoes">0.00</dd>
+
+                        <dt class="net-return-label"><strong>Retorno Potencial LÍQUIDO:</strong></dt>
+                        <dd id="retorno-liquido-potencial"><strong>R$ 0.00</strong></dd> 
+                    </dl>
+
+                    <button type="submit" id="btn-apostar" disabled>Apostar</button>
+                    </form>
+            </aside>
+
+        </main>
+
+        <footer class="rodape-principal">
+            <p class="copyright-info">© 2025 BetSim. Projeto acadêmico desenvolvido por <strong>Ilana Nascimento</strong>.</p>
+        </footer>
+
+    </div>
+
+    <script src="js/dados.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/apostas.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/carteira.js"></script>
+</body>
+
+</html>

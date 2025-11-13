@@ -1,0 +1,130 @@
+/*
+ * Arquivo: css/responsivo.css
+ * Descrição: Media Queries para garantir a adaptabilidade em tablets e smartphones.
+ */
+
+/* Tablet (Telas até 1024px) */
+@media (max-width: 1024px) {
+
+    /* LAYOUT: Transforma o grid principal em empilhamento */
+    .layout-eventos-bilhete {
+        /* Antigo: .events-and-sidebar-layout */
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    /* HEADER: Ajuste de navegação */
+    .cabecalho-principal {
+        /* Antigo: .main-header */
+        padding: 1rem;
+        /* Altera a navegação para ser horizontalmente scrollável ou oculta */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .navegacao-principal {
+        /* Antigo: .main-nav */
+        order: 2;
+        /* Move a navegação principal para baixo no header em telas menores */
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .navegacao-principal ul {
+        /* Antigo: .main-nav ul */
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        gap: 1rem;
+    }
+
+    /* SIDEBAR (Bilhete de Aposta): Oculta ou transforma em botão flutuante */
+    .barra-bilhete {
+        /* Antigo: .bet-slip-sidebar */
+        /* No mobile, o sidebar não pode ficar colado na tela */
+        position: relative;
+        width: 100%;
+        margin-bottom: 1rem;
+        top: 0;
+    }
+
+    /* CARD DE JOGO: Reduz o espaço */
+    .card-jogo {
+        /* Antigo: .match-card */
+        /* Mais espaço para o nome do time */
+        grid-template-columns: 2fr 3fr;
+        font-size: 0.9rem;
+    }
+
+    /* FOOTER: Layout de coluna única */
+    .footer-links-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Smartphone (Telas até 600px) */
+@media (max-width: 600px) {
+
+    /* HEADER: Organização vertical */
+    .cabecalho-principal {
+        /* Antigo: .main-header */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acoes-usuario {
+        /* Antigo: .user-actions */
+        margin-top: 0.5rem;
+        /* Retira o botão do fluxo e o posiciona no canto superior direito */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* LISTAGEM DE EVENTOS: Otimização extrema de espaço */
+    .sport-group h2 {
+        font-size: 1rem;
+    }
+
+    .card-jogo {
+        /* Antigo: .match-card */
+        /* Força a divisão em duas partes mais equilibradas para nomes curtos */
+        grid-template-columns: 1fr 1fr;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .apresentacao-time {
+        /* Antigo: .team-presentation */
+        /* Alinha a apresentação dos times à esquerda */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .team-item figcaption {
+        font-size: 0.85rem;
+    }
+
+    /* ODDS: Empurra um pouco mais para a direita */
+    .mercado-cotacoes {
+        /* Antigo: .odds-market */
+        padding-left: 0.5rem;
+    }
+
+    .odd-labels,
+    .odd-values {
+        gap: 0.3rem;
+    }
+
+    .odd-item {
+        padding: 0.4rem 0.1rem;
+        font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+    .footer-nav ul {
+        grid-template-columns: 1fr;
+        /* Lista em coluna única */
+    }
+}

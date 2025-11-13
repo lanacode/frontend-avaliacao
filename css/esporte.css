@@ -1,0 +1,276 @@
+/*
+ * Arquivo: css/esportes.css
+ * Descrição: Estilos para Cards de Eventos, Tabela de Odds e Bilhete de Aposta (Sidebar).
+ */
+
+/* ================================================= */
+/* 1. LISTAGEM DE EVENTOS - NOVAS CLASSES */
+/* ================================================= */
+
+.listagem-eventos { /* Antigo: .events-listing */
+    padding: 0 1rem;
+}
+
+.sport-group {
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    overflow: hidden; 
+}
+
+.sport-group h2 {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* CARD DE JOGO (Match Card) - NOVA CLASSE */
+.card-jogo { /* Antigo: .match-card */
+    display: grid;
+    /* Usando 1fr para a apresentação do time e 1.5fr para as odds */
+    grid-template-columns: 1fr 1.5fr; 
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    position: relative; 
+}
+
+/* Estilo para a última linha de cada grupo */
+.sport-group .card-jogo:last-of-type { /* Antigo: .sport-group .match-card:last-of-type */
+    border-bottom: none;
+}
+
+/* TIMES E PLACAR (Team Presentation) - NOVA CLASSE */
+.apresentacao-time { /* Antigo: .team-presentation */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    align-items: flex-start;
+}
+
+.team-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.team-item img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--color-border); 
+}
+
+/* POSICIONAMENTO DO PLACAR/VS - NOVA CLASSE */
+.info-centro-jogo { /* Antigo: .match-center-info */
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    position: absolute; 
+    left: 140px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    text-align: center;
+}
+
+/* ODDS (Cotações) - NOVA CLASSE */
+.mercado-cotacoes { /* Antigo: .odds-market */
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding-left: 1rem;
+}
+
+.odd-labels,
+.odd-values {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.odd-labels {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+.odd-values {
+    font-weight: bold;
+}
+
+.odd-item {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 0.5rem 0.25rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.odd-item:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-surface);
+}
+
+.odd-item.selected {
+    background-color: var(--color-success);
+    color: var(--color-surface);
+    border-color: var(--color-highlight);
+}
+
+.more-events-link {
+    display: block;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-background);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+/* ================================================= */
+/* 2. BILHETE DE APOSTA (SIDEBAR) - NOVAS CLASSES/IDS */
+/* ================================================= */
+
+.barra-bilhete { /* Antigo: .bet-slip-sidebar */
+    width: 300px;
+    min-width: 280px; 
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-self: flex-start; 
+    position: sticky;
+    top: calc(70px + 1rem); 
+    z-index: 50;
+}
+
+.barra-bilhete header h3 { /* Antigo: .bet-slip-sidebar header h3 */
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.lista-selecoes { /* Antigo: .selections-list */
+    min-height: 50px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Estilo para cada seleção de aposta no bilhete */
+.selecao-aposta { /* Antigo: .bet-selection */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted var(--color-border);
+    padding: 0.5rem 0;
+}
+
+.titulo-selecao { /* Antigo: .selection-title */
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.btn-remover-selecao { /* Antigo: .remove-selection-btn */
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+}
+
+/* Form e Cálculos - NOVAS CLASSES/IDS */
+.formulario-aposta label { /* Antigo: .bet-form label */
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.formulario-aposta input[type="number"] { /* Antigo: .bet-form input[type="number"] */
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Usando Grid para o Summary */
+.resumo-calculo { /* Antigo: .calculation-summary */
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.resumo-calculo dt { /* Antigo: .calculation-summary dt */
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-align: left;
+}
+
+.resumo-calculo dd { /* Antigo: .calculation-summary dd */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: right;
+    margin: 0;
+}
+
+.resumo-calculo dt strong,
+.resumo-calculo dd strong {
+    font-size: 1.1rem;
+    color: var(--color-success); 
+    font-weight: 700;
+}
+
+.formulario-aposta button { /* Antigo: .bet-form button */
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#btn-apostar { /* Antigo: #place-bet-btn */
+    background-color: var(--color-success);
+    color: white;
+}
+
+#btn-apostar:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+#btn-apostar:disabled {
+    background-color: var(--color-border);
+    color: var(--color-text-secondary);
+    cursor: not-allowed;
+}
+
+#btn-limpar-bilhete { /* Seletor não existia, mas presumo que seria: #clear-bet-btn */
+    background-color: var(--color-danger);
+    color: white;
+}

@@ -1,124 +1,165 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plataforma de Apostas | Eventos</title>
-    <link rel="stylesheet" href="styles/principal.css" />
-  </head>
-  <body>
-    <header class="cabecalho-principal">
-      <div class="logo">
-        <h1>BetProject</h1>
-      </div>
-      <nav class="navegacao-principal">
-        <ul>
-          <li><a href="/">Eventos</a></li>
-          <li><a href="/ao-vivo">Ao Vivo</a></li>
-          <li><a href="/promocoes">Promoções</a></li>
-        </ul>
-      </nav>
-      <div class="acoes-usuario">
-        <a href="/login.html" class="btn-entrar"
-          >Login</a
-        >
-        <a href="/cadastro.html" class="btn-cadastrar"
-          >Cadastre-se</a
-        >
-      </div>
-    </header>
+<html lang="pt-br">
 
-    <main class="container-principal">
-      <section class="area-conteudo">
-        <section class="secao-destaques">
-          <h2>Destaques da Semana</h2>
-          <div id="container-carrossel"></div>
-        </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetSim | Simulador de Apostas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/esporte.css"> 
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
 
-        <section class="area-eventos">
-          <h2>Próximos Eventos</h2>
+<body>
 
-          <nav class="filtros-eventos">
-            <button data-esporte="futebol">Futebol</button>
-            <button data-esporte="esports">E-sports</button>
-          </nav>
+    <div class="container-principal">
+        
+        <header class="cabecalho-principal">
+            <figure class="logo">
+                <img src="img/logo.png" alt="BetSim Logo">
+                <h1>BetSim</h1>
+            </figure>
 
-          <div id="lista-eventos" class="grade-cards-eventos">
-            <div class="evento">
-              <h6>E-sport</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
-                hic deleniti, molestiae et beatae alias facere deserunt
-                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
-                sapiente consequatur alias dolorum vero consequuntur nemo?
-              </p>
-            </div>
-            <div class="evento">
-              <h6>Futebol</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
-                hic deleniti, molestiae et beatae alias facere deserunt
-                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
-                sapiente consequatur alias dolorum vero consequuntur nemo?
-              </p>
-            </div>
-            <div class="evento">
-              <h6>Basquete</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
-                hic deleniti, molestiae et beatae alias facere deserunt
-                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
-                sapiente consequatur alias dolorum vero consequuntur nemo?
-              </p>
-            </div>
-            <div class="evento">
-              <h6>Speedway</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
-                hic deleniti, molestiae et beatae alias facere deserunt
-                blanditiis suscipit? Reiciendis deserunt nesciunt aspernatur
-                sapiente consequatur alias dolorum vero consequuntur nemo?
-              </p>
-            </div>
-          </div>
-        </section>
-      </section>
+            <nav class="navegacao-principal">
+                <ul class="menu">
+                    <li><a href="index.html" class="ativo">Início</a></li>
+                    <li><a href="futebol.html">Futebol</a></li>
+                    <li><a href="basquete.html">Basquete</a></li>
+                    <li><a href="tenis.html">Tênis</a></li>
+                    <li><a href="formula1.html">Fórmula 1</a></li>
+                    <li><a href="esport.html">E-Sports</a></li>
+                </ul>
+            </nav>
 
-      <aside id="sidebar-bilhete" class="sidebar-bilhete">
-        <h3>Seu Bilhete de Aposta</h3>
+            <section class="acoes-usuario">
+                <a href="login.html" class="btn-entrar">Entrar</a>
+            </section>
+        </header>
 
-        <div id="lista-selecoes">
-          <p class="aviso-vazio">Clique nas Odds para adicionar seleções.</p>
-        </div>
+        <main class="layout-eventos-bilhete">
 
-        <div class="area-valor-aposta">
-          <label for="valor-aposta">Valor da Aposta (R$):</label>
-          <input type="number" id="valor-aposta" min="1" value="10" />
-        </div>
+            <section class="conteudo-eventos-principal">
 
-        <div class="area-resumo">
-          <p>
-            Retorno Potencial Bruto: <span id="retorno-bruto">R$ 0.00</span>
-          </p>
-          <p class="deducao">
-            Encargo de Serviço (5%): <span id="taxa-deducao">R$ 0.00</span>
-          </p>
-          <hr />
-          <p class="total">
-            Retorno Líquido Estimado: <span id="retorno-liquido">R$ 0.00</span>
-          </p>
-        </div>
+                <section class="banner" aria-label="Simulador de Apostas">
+                    <article class="banner-content">
+                        <h2>Simule suas apostas com segurança!</h2>
+                        <p>Treine suas habilidades e descubra como funcionam as apostas esportivas de forma gratuita.</p>
+                    </article>
+                </section>
+                
+                <nav class="filtros-globais" aria-label="Filtros Globais de Esporte">
+                    <ul class="botoes-filtro">
+                        <li><button class="btn-filtro ativo" data-filter="destaque">Destaques</button></li>
+                        <li><button class="btn-filtro" data-filter="modalidades">Modalidades</button></li>
+                        <li><button class="btn-filtro" data-filter="ligas">Ligas</button></li>
+                        </ul>
+                </nav>
 
-        <button id="btn-apostar" class="btn-principal" disabled>
-          Fazer Aposta
-        </button>
-      </aside>
-    </main>
+                <section id="lista-eventos" class="listagem-eventos" aria-live="polite">
+                    <section class="sport-group" data-sport="futebol">
+                        <h2>FUTEBOL</h2>
+                        
+                        <article class="card-jogo" data-event-id="1001">
+                            <figure class="team-presentation">
+                                <div class="team-item team-home">
+                                    <img src="img/time1.png" alt="time 1">
+                                    <figcaption>Time 01</figcaption>
+                                </div>
+                                
+                                <div class="match-center-info">
+                                    <span class="score-ficticio">0</span>
+                                </div>
+                                
+                                <div class="team-item team-away">
+                                    <img src="img/time2.png" alt="time 2">
+                                    <figcaption>Time 02</figcaption>
+                                </div>
+                            </figure>
+                            
+                            <section class="mercado-cotacoes" aria-label="Cotações de Resultado Final">
+                                <ul class="odd-labels">
+                                    <li>1</li>
+                                    <li>X</li>
+                                    <li>2</li>
+                                </ul>
+                                <ul class="odd-values">
+                                    <li class="odd-item" data-odd="15.00" data-type="1">15.00</li> 
+                                    <li class="odd-item" data-odd="4.00" data-type="X">4.00</li>
+                                    <li class="odd-item" data-odd="1.20" data-type="2">1.20</li>
+                                </ul>
+                            </section>
+                        </article>
+                        
+                        <a href="futebol.html" class="more-events-link">ver mais jogos de futebol</a>
+                    </section>
+                    
+                    </section>
 
-    <footer class="rodape-principal">
-      <p>&copy; 2025 BetProject. Todos os direitos reservados.</p>
-    </footer>
+            </section>
+            
+            <aside id="barra-bilhete" class="barra-bilhete" aria-label="Bilhete de Aposta e Simulador de Ganhos">
+                <header>
+                    <h3>Seu Bilhete</h3>
+                </header>
+                <div id="lista-selecoes" class="lista-selecoes">
+                    <p class="empty-message">Clique nas Odds para adicionar seleções.</p>
+                </div>
+                
+                <form class="formulario-aposta">
+                    <label for="valor-aposta">Valor da Aposta (R$):</label>
+                    <input type="number" id="valor-aposta" value="10.00" min="1.00" step="0.01" required>
+                    
+                    <dl class="resumo-calculo">
+                        <dt>Odd Total:</dt>
+                        <dd id="total-cotacoes">0.00</dd>
+                        
+                        <dt>Retorno Potencial Bruto:</dt>
+                        <dd id="retorno-bruto-potencial">R$ 0.00</dd>
+                        
+                        <dt class="service-charge-label">Encargo de Serviço (5%):</dt>
+                        <dd id="valor-encargo-servico">R$ 0.00</dd>
+                        
+                        <dt class="net-return-label"><strong>Retorno Potencial LÍQUIDO:</strong></dt>
+                        <dd id="retorno-liquido-potencial"><strong>R$ 0.00</strong></dd>
+                    </dl>
+                    
+                    <button type="submit" id="btn-apostar" disabled>Apostar</button>
+                    <button type="button" id="btn-limpar-bilhete">Limpar Bilhete</button>
+                </form>
+            </aside>
 
-    <script src="js/app.js"></script>
-  </body>
+        </main>
+        
+        <footer class="rodape-principal">
+            <section class="footer-links-container">
+                <nav class="footer-nav">
+                    <h3>Links Importantes</h3>
+                    <ul>
+                        <li><a href="#">Termos - Condições</a></li>
+                        <li><a href="#">Anti-Responsivo</a></li>
+                        <li><a href="#">Política</a></li>
+                        <li><a href="#">Parceiros</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+                <article class="responsible-gambling">
+                    <h3>JOGUE COM RESPONSABILIDADE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                </article>
+            </section>
+            
+            <p class="copyright-info">© 2025 BetSim. Projeto acadêmico desenvolvido por <strong>Ilana Nascimento</strong>.</p>
+        </footer>
+
+    </div>
+    
+    <script src="js/dados.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/apostas.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/carteira.js"></script>
+</body>
+
 </html>
